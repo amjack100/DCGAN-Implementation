@@ -1,5 +1,5 @@
 =======================
-Tensorflow Examples CLI
+DCGAN CLI with Examples
 =======================
 
 
@@ -16,7 +16,8 @@ Tensorflow Examples CLI
 
 
 
-Train simple Tensorflow tutorial models from CLI for education
+Train simple DCGAN models from the CLI while experimenting with different hyperparameters
+
 
 
 * Free software: MIT license
