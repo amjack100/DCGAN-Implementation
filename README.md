@@ -15,7 +15,17 @@ different hyperparameters
 <p align="center">
   <img src="result-26-feb-2021.gif" alt="animated" />
 </p>
+
+Results achieved after training the celebA dataset for 100 epochs
+
 <!-- ![](result-26-feb-2021.gif) -->
+
+<p align="center">
+  <img src="docs/fake_eval.png" alt="animated" />
+</p>
+<p align="center">
+  <img src="docs/real_eval.png" alt="animated" />
+</p>
 
 ## Features
 
