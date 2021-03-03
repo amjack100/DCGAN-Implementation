@@ -12,7 +12,10 @@ different hyperparameters
 -   Free software: MIT license
 -   Documentation: <https://tf-examples.readthedocs.io>.
 
-![](result-26-feb-2021.gif)
+<p align="center">
+  <img src="result-26-feb-2021.gif" alt="animated" />
+</p>
+<!-- ![](result-26-feb-2021.gif) -->
 
 ## Features
 
