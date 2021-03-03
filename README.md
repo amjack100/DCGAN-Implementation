@@ -16,9 +16,11 @@ different hyperparameters
   <img src="result-26-feb-2021.gif" alt="animated" />
 </p>
 
-Results achieved after training the celebA dataset for 100 epochs
+ABOVE: Frame by frame animation of training the celebA dataset for 100 epochs
 
 <!-- ![](result-26-feb-2021.gif) -->
+
+Here are some typical trends to look for in a successful GAN training session. These graphs map the discriminator return value when evaluating fake (produced by the generator) and real entities. The different colors represent varying image resolutions of the CelebA dataset (ranging from 4x4 to the original 32x32).
 
 <p align="center">
   <img src="docs/fake_eval.png" alt="animated" />
