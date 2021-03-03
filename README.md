@@ -1,10 +1,10 @@
 # DCGAN CLI with Examples
 
-![image](https://img.shields.io/pypi/v/tf_examples.svg%0A%20%20%20%20%20:target:%20https://pypi.python.org/pypi/tf_examples)
+<!-- ![image](https://img.shields.io/pypi/v/tf_examples.svg%0A%20%20%20%20%20:target:%20https://pypi.python.org/pypi/tf_examples)
 
 ![image](https://img.shields.io/travis/amjack100/tf_examples.svg%0A%20%20%20%20%20:target:%20https://travis-ci.com/amjack100/tf_examples)
 
-![image](https://readthedocs.org/projects/tf-examples/badge/?version=latest%0A%20%20%20%20%20:target:%20https://tf-examples.readthedocs.io/en/latest/?badge=latest%0A%20%20%20%20%20:alt:%20Documentation%20Status)
+![image](https://readthedocs.org/projects/tf-examples/badge/?version=latest%0A%20%20%20%20%20:target:%20https://tf-examples.readthedocs.io/en/latest/?badge=latest%0A%20%20%20%20%20:alt:%20Documentation%20Status) -->
 
 Train simple DCGAN models from the CLI while experimenting with
 different hyperparameters
