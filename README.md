@@ -29,9 +29,7 @@ Here are some typical trends to look for in a successful GAN training session. T
   <img src="docs/real_eval.png" alt="animated" />
 </p>
 
-## Features
 
--   TODO
 
 ## Credits
 
