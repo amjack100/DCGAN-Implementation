@@ -34,19 +34,19 @@ dataset = make_dataset(32, data_folder, channel_count)
 
 
 class DCGAN(object):
-    def __init__(self, **kwargs) -> None:
+    def __init__(self, epochs, logname, channels, batch_size, data_folder) -> None:
 
-        self.batch_size = kwargs["batch_size"]
+        self.batch_size = batch_size
         self.noise_dim = 100
         self.num_examples_to_generate = 16
         self.img_size = 28
-        self.data_folder = kwargs["data_folder"]
-        self.num_channels = kwargs["channels"]
-        self.epochs = kwargs["epochs"]
+        self.data_folder = data_folder
+        self.num_channels = channels
+        self.epochs = epochs
         self.lr = 1e-4
         self.lr2 = 1e-4
         self.batch_size = 256
-        self.train_summary_writer = make_summary_writer(**kwargs)
+        self.train_summary_writer = make_summary_writer(logname)
 
         show_dataset(dataset, self.num_examples_to_generate, self.train_summary_writer)
 
@@ -85,18 +85,6 @@ class DCGAN(object):
             gen_loss_metric.reset_states()
             disc_loss_metric.reset_states()
 
-            # data = iter(dataset.take(256).cache())
-            # print(dir(data))
-            # print(data.output_shapes)
-            # for step in range(256):
-
-            #     with tf.profiler.experimental.Trace("train", step_num=step, _r=1):
-            #         self.train_step(next(data), epoch)
-
-            #     if step == 255:
-            #         print("\n")
-            #     elif step % 2 == 0:
-            #         print(".", end="", flush=True)
 
             for step, batch in enumerate(dataset.take(256)):
                 self.train_step(batch, epoch)

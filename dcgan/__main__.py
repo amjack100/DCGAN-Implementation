@@ -1,7 +1,6 @@
 """Console script for tf_examples."""
 import sys
-import click
-
+import fire
 import os
 
 
@@ -10,32 +9,22 @@ os.environ["TF_GPU_THREAD_MODE"] = "gpu_private"
 
 from dcgan import *
 
-# from tf_examples.lin_reg import lin_reg
 
-
-@click.command()
-@click.option("--epochs", type=click.INT, default=50, help="Default 50")
-@click.option("--logname", type=click.STRING, required=True)
-@click.option("--channels", type=click.INT, default=1, help="Number of color channels")
-@click.option("--batch-size", type=click.INT, default=256)
-@click.option(
-    "--data-folder", type=click.STRING, help="Raw images any size", required=False
-)
-def main(**kwargs):
+def main(epochs, logname, channels=1, batch_size=256, data_folder=None):
     # """Console script for dcgan."""
 
-    if kwargs["data_folder"]:
-        os.environ["DCGAN_DATADIR"] = kwargs["data_folder"]
+    if data_folder:
+        os.environ["DCGAN_DATADIR"] = data_folder
 
-    os.environ["DCGAN_CHANNEL"] = str(kwargs["channels"])
+    os.environ["DCGAN_CHANNEL"] = str(channels)
 
     import dcgan.dcgan
 
-    obj = dcgan.dcgan.DCGAN(**kwargs)
+    obj = dcgan.dcgan.DCGAN(epochs, logname, channels, batch_size, data_folder)
     obj.train()
 
     return 0
 
 
-if __name__ == "__main__":
-    sys.exit(main())  # pragma: no cover
+def fire_():
+    fire.Fire(main)

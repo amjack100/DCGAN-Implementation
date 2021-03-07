@@ -9,10 +9,10 @@ gen_loss_metric = tf.keras.metrics.Mean(name="gen_loss_metric")
 disc_loss_metric = tf.keras.metrics.Mean(name="disc_loss_metric")
 
 
-def make_summary_writer(**kwargs):
+def make_summary_writer(logname):
 
     current_time = datetime.datetime.now().strftime("%Y%m%d")
-    train_log_dir = f"/home/andy/logs/DCGAN/{current_time}/" + kwargs["logname"]
+    train_log_dir = f"/home/andy/logs/DCGAN/{current_time}/" + logname
     print(f"Logging metrics to: {train_log_dir}")
     return tf.summary.create_file_writer(train_log_dir)
 

@@ -19,3 +19,5 @@ if not os.path.exists(IMAGE_DIR):
 
 if not os.path.exists(MODEL_DIR):
     os.mkdir(MODEL_DIR)
+
+from dcgan.__main__ import *

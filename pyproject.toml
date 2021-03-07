@@ -7,10 +7,10 @@ license = "MIT"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-click = "^7.1.2"
 tensorflow = "^2.4.1"
 matplotlib = "^3.3.4"
 imageio = "^2.9.0"
+fire = "^0.4.0"
 
 [tool.poetry.dev-dependencies]
 
@@ -19,4 +19,4 @@ requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-dcgan = 'dcgan.__main__:main'
+dcgan = 'dcgan.__main__:fire_'
