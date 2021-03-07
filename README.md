@@ -9,14 +9,23 @@
 Train simple DCGAN models from the CLI while experimenting with
 different hyperparameters
 
--   Free software: MIT license
--   Documentation: <https://tf-examples.readthedocs.io>.
+- Free software: MIT license
+- Documentation: <https://tf-examples.readthedocs.io>.
 
 <p align="center">
-  <img src="result-26-feb-2021.gif" alt="animated" />
+  <img src="docs/result-26-feb-2021.gif" alt="animated" />
 </p>
 
-ABOVE: Frame by frame animation of training the celebA dataset for 100 epochs
+Frame by frame animation of training the celebA dataset for 100 epochs
+
+## Installation
+
+```bash
+git clone https://github.com/amjack100/DCGAN-Implementation.git
+cd ./dcgan
+poetry install
+poetry run dcgan --help
+```
 
 <!-- ![](result-26-feb-2021.gif) -->
 
