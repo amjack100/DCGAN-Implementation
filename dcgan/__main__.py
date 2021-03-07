@@ -22,7 +22,15 @@ except:
 
 
 @tf.function
-def train_step(images, epoch, summary_writer):
+def train_step(
+    images,
+    epoch,
+    summary_writer,
+    generator,
+    discriminator,
+    generator_optimizer,
+    discriminator_optimizer,
+):
     noise = tf.random.normal([256, 100])
     # tf.random.gau
     with tf.GradientTape() as gen_tape, tf.GradientTape() as disc_tape:
@@ -74,11 +82,11 @@ def train(epochs, logname, channels=1, batch_size=256, data_folder=None):
     )
 
     manager = tf.train.CheckpointManager(checkpoint, CHECKPOINT_DIR, max_to_keep=3)
-    train_summary_writer = make_summary_writer(logname)
+    summary_writer = make_summary_writer(logname)
 
     dataset = make_dataset(32, data_folder, channels)
 
-    show_dataset(dataset, 16, train_summary_writer)
+    show_dataset(dataset, 16, summary_writer)
     checkpoint.restore(manager.latest_checkpoint)
     if manager.latest_checkpoint:
 
@@ -101,7 +109,7 @@ def train(epochs, logname, channels=1, batch_size=256, data_folder=None):
         disc_loss_metric.reset_states()
 
         for step, img_batch in enumerate(dataset.take(256)):
-            train_step(img_batch, epoch)
+            train_step(img_batch, epoch, summary_writer, generator, discriminator, generator_optimizer, discriminator_optimizer)
 
         display.clear_output(wait=True)
         generate_and_save_images(generator, epoch + 1, seed, summary_writer)
