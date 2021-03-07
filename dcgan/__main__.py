@@ -19,7 +19,7 @@ from dcgan import *
 @click.option("--channels", type=click.INT, default=1, help="Number of color channels")
 @click.option("--batch-size", type=click.INT, default=256)
 @click.option(
-    "--data-folder", type=click.STRING, help="Raw images any size", required=True
+    "--data-folder", type=click.STRING, help="Raw images any size", required=False
 )
 def main(**kwargs):
     # """Console script for dcgan."""

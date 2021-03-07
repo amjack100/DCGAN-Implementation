@@ -24,7 +24,13 @@ discriminator = make_discriminator_model(32, channel_count)
 
 generator_optimizer = tf.keras.optimizers.Adam(1e-04, beta_1=0.5)
 discriminator_optimizer = tf.keras.optimizers.Adam(1e-04, beta_1=0.5)
-dataset = make_dataset(32, os.environ["DCGAN_DATADIR"], channel_count)
+
+try:
+    data_folder = os.environ["DCGAN_DATADIR"]
+except:
+    data_folder = None
+
+dataset = make_dataset(32, data_folder, channel_count)
 
 
 class DCGAN(object):
