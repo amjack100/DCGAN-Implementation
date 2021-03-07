@@ -1,6 +1,8 @@
 import math
 import requests
 from tqdm import tqdm
+import zipfile
+
 
 # from .misc import sizeof_fmt
 
@@ -69,3 +71,6 @@ def save_response_content(response, destination, file_size=None, chunk_size=3276
 download_file_from_google_drive(
     "16IFg1dAN4j8RTL3ChnLjPUkbglLaJGdC", "./celeb_a_dataset.zip"
 )
+
+with zipfile.ZipFile("./celeb_a_dataset.zip", "r") as zip_ref:
+    zip_ref.extractall("./celeb_a_dataset")
