@@ -33,12 +33,12 @@ class DCGAN(object):
         self.batch_size = kwargs["batch_size"]
         self.noise_dim = 100
         self.num_examples_to_generate = 16
-        self.img_size = kwargs["img_size"]
+        self.img_size = 28
         self.data_folder = kwargs["data_folder"]
         self.num_channels = kwargs["channels"]
         self.epochs = kwargs["epochs"]
-        self.lr = kwargs["lr"]
-        self.lr2 = kwargs["lr2"]
+        self.lr = 1e-4
+        self.lr2 = 1e-4
         self.batch_size = 256
         self.train_summary_writer = make_summary_writer(**kwargs)
 
