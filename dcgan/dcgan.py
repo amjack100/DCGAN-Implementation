@@ -88,7 +88,6 @@ class DCGAN(object):
             real_out.reset_states()
             gen_loss_metric.reset_states()
             disc_loss_metric.reset_states()
-            display.clear_output(wait=True)
 
             for step, batch in enumerate(dataset.take(256)):
                 self.train_step(batch, epoch)
@@ -110,6 +109,7 @@ class DCGAN(object):
             print("Time for epoch {} is {} sec".format(epoch + 1, time.time() - start))
 
         # Generate after the final epoch
+        display.clear_output(wait=True)
         generate_and_save_images(
             generator, self.epochs, seed, self.train_summary_writer
         )
