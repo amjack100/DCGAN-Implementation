@@ -19,7 +19,7 @@ different hyperparameters
 Frame by frame animation of training the celebA dataset for 100 epochs
 
 ## Installation
-
+Requires poetry to build the package https://github.com/python-poetry/poetry
 ```bash
 git clone https://github.com/amjack100/DCGAN-Implementation.git
 cd ./dcgan
