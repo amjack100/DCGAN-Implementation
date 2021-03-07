@@ -64,7 +64,7 @@ def generate_and_save_images(model, epoch, test_input, summary_writer):
         plt.subplot(4, 4, i + 1)
         plt.imshow(predictions[i, :, :, :] * 0.5 + 0.5, cmap="gray")
         plt.axis("off")
-
+    plt.show()
     plt.savefig(os.path.join(IMAGE_DIR, "epoch_{:04d}.png".format(epoch)))
 
     if epoch % 5 == 0:
