@@ -20,7 +20,7 @@ from dcgan import *
     "--lr2", type=click.FLOAT, default=1e-4, help="Discriminator learning rate"
 )
 @click.option("--img-size", type=click.INT, default=28, help="Both width and height")
-@click.option("--logname", type=click.STRING, required=False)
+@click.option("--logname", type=click.STRING, required=True)
 @click.option("--reset", flag_value=True)
 @click.option("--show", flag_value=True, help="Use imshow")
 @click.option("--channels", type=click.INT, default=1, help="Number of color channels")
@@ -30,7 +30,7 @@ from dcgan import *
     flag_value=True,
     help="Display all training info without actually training",
 )
-@click.option("--data-folder", type=click.STRING, help="Raw images any size")
+@click.option("--data-glob", type=click.STRING, help="Raw images any size")
 def main(**kwargs):
     # """Console script for dcgan."""
 
