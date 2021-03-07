@@ -13,6 +13,10 @@ from dcgan.utils import *
 from dcgan.metrics import *
 from dcgan import CHECKPOINT_DIR, MODEL_DIR
 
+try:
+    from IPython import display
+except:
+    pass
 
 channel_count = int(os.environ["DCGAN_CHANNEL"])
 
@@ -84,7 +88,7 @@ class DCGAN(object):
             real_out.reset_states()
             gen_loss_metric.reset_states()
             disc_loss_metric.reset_states()
-
+            display.clear_output(wait=True)
 
             for step, batch in enumerate(dataset.take(256)):
                 self.train_step(batch, epoch)
@@ -99,6 +103,7 @@ class DCGAN(object):
                 )
 
                 # Produce images for the GIF as we go
+            display.clear_output(wait=True)
             generate_and_save_images(
                 generator, epoch + 1, seed, self.train_summary_writer
             )

@@ -4,6 +4,7 @@ BUFFER_SIZE = 60000
 BATCH_SIZE = 256
 
 
+
 def make_dataset(img_size: int, data_folder: str, channel_count: int):
     def load(file):
 

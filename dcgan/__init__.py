@@ -6,6 +6,9 @@ __version__ = "0.1.0"
 
 import os
 
+
+
+
 # LOGDIR = f"{os.path.split(__file__ )[0]}/logs"
 CHECKPOINT_DIR = f"{os.path.split(__file__ )[0]}/../checkpoints"
 IMAGE_DIR = f"{os.path.split(__file__ )[0]}/../images"
