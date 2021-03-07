@@ -92,6 +92,11 @@ class DCGAN(object):
             for step, batch in enumerate(dataset.take(256)):
                 self.train_step(batch, epoch)
 
+            display.clear_output(wait=True)
+            generate_and_save_images(
+                generator, epoch + 1, seed, self.train_summary_writer
+            )
+            
             self.checkpoint.step.assign_add(1)
             if int(self.checkpoint.step) % 15 == 0:
                 save_path = self.manager.save()
@@ -102,10 +107,7 @@ class DCGAN(object):
                 )
 
                 # Produce images for the GIF as we go
-            display.clear_output(wait=True)
-            generate_and_save_images(
-                generator, epoch + 1, seed, self.train_summary_writer
-            )
+
             print("Time for epoch {} is {} sec".format(epoch + 1, time.time() - start))
 
         # Generate after the final epoch
